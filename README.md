@@ -222,8 +222,31 @@ image-set,webkit私有属性，也是CSS4的属性，为解决Rentina屏幕下�
 	background: url(images/bg.jpg) no-repeat center;
 	background: -webkit-image-set(
 	url(images/bg.jpg) 1x,     //支持image-set普通屏
-	url(images/bg-2x.jpg) 2x); //支持image-set的Rentinan
+	url(images/bg@2x.jpg) 2x); //支持image-set的Rentinan
 }
+
+或者
+
+        .back{
+            height:51px;
+            width:51px;
+            background:url('wechat.png') no-repeat center;
+            background-size:100%;
+        }
+        @media only screen and (-webkit-min-device-pixel-ratio:2){
+            .back{
+                background:url('wechat@2x.png') no-repeat;
+                background-size:100%;
+            }
+        }
+        /* 当dpr为3时候也就是iphone6plus 是的时候加载这个图片  */
+        @media only screen and (-webkit-min-device-pixel-ratio:3){
+            .back{
+                background:url('wechat@3x.png') no-repeat;
+                background-size:100%;
+            }
+        }
+
 ```
 
 
